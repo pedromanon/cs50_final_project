@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<!-- Makes an iframe which contains the generated pdf to display on the page -->
+<div class ="container">
+    <iframe src="./static/schedule.pdf" class="responsive-iframe"></iframe>
+</div>
+<!-- <iframe src="./static/schedule.pdf" width="75%" height="1000px"></iframe> -->
+{% endblock %}
