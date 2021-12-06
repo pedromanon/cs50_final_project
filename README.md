@@ -44,3 +44,5 @@ Once the application is running using flask or by using the url you should be ab
 I should make clear that this application is meant for employees of the Lash Lounge to be able to use, so they will be the ones responsible for using this application; not customers.
 
 The pdf that is output to the screen has a navigation bar that allows you do do things like, minimize or maximize the pdf, rotate the pdf, download the pdf, print the pdf, and other options. This application was made with the intention that the pdf would be printed and given to the client for their signature and later filing.
+
+The URL for my short video describing my project can be found here: https://youtu.be/rBQ3DVWahnI
