@@ -1012,32 +1012,37 @@ def index():
         
         # This creates the color key
         appointment_color(pdf)
+        pdf.cell(20, 3)
         pdf.cell(5, 3, border = 1, fill = True)
-        pdf.cell(22, 3, txt = "Appointment", align = 'L')
+        pdf.cell(58, 3, txt = "Appointment", align = 'L')
 
-        draft_day_color(pdf, "Classic")
-        pdf.cell(5, 3, border = 1, fill = True)
-        pdf.cell(22, 3, txt = "Draft Day: $109", align = 'L')
+        if membership_type == "Classic":
 
-        draft_day_color(pdf, "Hybrid")
-        pdf.cell(5, 3, border = 1, fill = True)
-        pdf.cell(22, 3, txt = "Draft Day: $139", align = 'L')
+            draft_day_color(pdf, "Classic")
+            pdf.cell(5, 3, border = 1, fill = True)
+            pdf.cell(58, 3, txt = "Draft Day: $109", align = 'L')
 
-        draft_day_color(pdf, "Volume")
-        pdf.cell(5, 3, border = 1, fill = True)
-        pdf.cell(22, 3, txt = "Draft Day: $159", align = 'L')
+            draft_and_appointment_day_color(pdf, "Classic")
+            pdf.cell(5, 3, border = 1, fill = True)
+            pdf.cell(58, 3, txt = "Appt/Draft: $109", align = 'L', ln = 1)
+        elif membership_type == "Hybrid":
 
-        draft_and_appointment_day_color(pdf, "Classic")
-        pdf.cell(5, 3, border = 1, fill = True)
-        pdf.cell(22, 3, txt = "Appt/Draft: $109", align = 'L')
+            draft_day_color(pdf, "Hybrid")
+            pdf.cell(5, 3, border = 1, fill = True)
+            pdf.cell(58, 3, txt = "Draft Day: $139", align = 'L')
 
-        draft_and_appointment_day_color(pdf, "Hybrid")
-        pdf.cell(5, 3, border = 1, fill = True)
-        pdf.cell(22, 3, txt = "Appt/Draft: $139", align = 'L')
+            draft_and_appointment_day_color(pdf, "Hybrid")
+            pdf.cell(5, 3, border = 1, fill = True)
+            pdf.cell(58, 3, txt = "Appt/Draft: $139", align = 'L', ln = 1)
+        elif membership_type == "Volume":
 
-        draft_and_appointment_day_color(pdf, "Volume")
-        pdf.cell(5, 3, border = 1, fill = True)
-        pdf.cell(22, 3, txt = "Appt/Draft: $159", align = 'L')
+            draft_day_color(pdf, "Volume")
+            pdf.cell(5, 3, border = 1, fill = True)
+            pdf.cell(58, 3, txt = "Draft Day: $159", align = 'L')
+
+            draft_and_appointment_day_color(pdf, "Volume")
+            pdf.cell(5, 3, border = 1, fill = True)
+            pdf.cell(58, 3, txt = "Appt/Draft: $159", align = 'L', ln = 1)
 
         # This stores the pdf in the static file
         pdf.output("./static/schedule.pdf")
